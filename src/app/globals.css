@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+/* Force light mode only - override dark variant to use class-based selector */
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-display: 'Instrument Serif', serif;
   --font-sans: 'Inter', system-ui, sans-serif;
@@ -23,19 +26,12 @@
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--color-olive-100);
     scroll-behavior: smooth;
-
-    @variant dark {
-      background-color: var(--color-olive-950);
-    }
+    color-scheme: light;
   }
 
   body {
     color: var(--color-olive-950);
     font-family: var(--font-sans);
-  }
-
-  .dark body {
-    color: white;
   }
 }
 

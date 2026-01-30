@@ -924,7 +924,7 @@ export default function Home() {
                   <div className="flex size-10 items-center justify-center rounded-full bg-white/10">
                     <LockIcon className="size-5 text-white" />
                   </div>
-                  <h3 className="text-lg font-semibold text-white">Privacy First</h3>
+                  <h3 className="text-md font-semibold text-white">Privacy First</h3>
                 </div>
                 <button
                   onClick={() => setPrivacyModalOpen(false)}

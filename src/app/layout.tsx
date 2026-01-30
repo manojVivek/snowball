@@ -22,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="color-scheme" content="light only" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
@@ -39,7 +40,7 @@ export default function RootLayout({
           <Container>
             <a href="/" className="flex items-center justify-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity">
               <SnowballLogo className="size-8 sm:size-10 rounded-lg" />
-              <h1 className="font-display text-xl sm:text-2xl tracking-tight text-olive-950">
+              <h1 className="font-display text-xl sm:text-2xl tracking-tight text-olive-950 dark:text-white">
                 Snowball<span className="text-olive-400">.</span>
               </h1>
             </a>
@@ -50,9 +51,9 @@ export default function RootLayout({
         <Main className="flex-1">{children}</Main>
 
         {/* Minimal Footer */}
-        <footer className="py-6 sm:py-8 border-t border-olive-950/5">
+        <footer className="py-6 sm:py-8 border-t border-olive-950/5 dark:border-white/5">
           <Container>
-            <div className="text-center text-xs sm:text-sm text-olive-600 space-y-2">
+            <div className="text-center text-xs sm:text-sm text-olive-600 dark:text-olive-400 space-y-2">
               <p>Your dividend data is processed entirely in your browser. Only stock symbols are sent to fetch prices.</p>
               <p className="text-olive-400">
                 © 2025 Snowball · Made by{' '}
@@ -60,7 +61,7 @@ export default function RootLayout({
                   href="https://manojvivek.dev"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-olive-600 transition-colors"
+                  className="hover:text-olive-600 dark:hover:text-olive-300 transition-colors"
                 >
                   Manoj Vivek
                 </a>
@@ -69,7 +70,7 @@ export default function RootLayout({
                   href="https://github.com/manojVivek/snowball"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-olive-600 transition-colors"
+                  className="hover:text-olive-600 dark:hover:text-olive-300 transition-colors"
                 >
                   GitHub
                 </a>
