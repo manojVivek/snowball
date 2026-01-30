@@ -526,9 +526,6 @@ export default function Home() {
           <Container className="max-w-md mx-auto text-center space-y-4 sm:space-y-6">
             <Subheading className="tabular-nums">{getProgressMessage()}</Subheading>
 
-            {progress.fromCache > 0 && progress.stage === 'fetching' && (
-              <Text className="text-olive-500">{progress.fromCache} prices loaded from cache</Text>
-            )}
 
             {/* Progress Bar */}
             <div className="space-y-2">
