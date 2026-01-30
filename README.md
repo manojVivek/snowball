@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Snowball
+
+A privacy-first tool to reinvest your dividends back into the same stocks. Upload your broker's dividend report and get personalized buy recommendations.
+
+## Features
+
+- **Privacy First** - Your financial data never leaves your browser. Only ticker symbols are sent to fetch current prices.
+- **Smart Recommendations** - Automatically calculates how many shares to buy based on your dividend income from each stock.
+- **Direct Order Placement** - Place orders directly on your broker with a few clicks.
+- **Multi-Broker Support** - Currently supports Zerodha, with more brokers coming soon.
+
+## How It Works
+
+1. Download your Dividend report from your broker.
+2. Upload the CSV file to Snowball
+3. Review the parsed dividends and buy recommendations
+4. Export to your broker or place orders directly
+
+## Privacy
+
+- All file processing happens locally in your browser
+- Only stock ticker symbols are sent to the API to fetch current prices
+- No cookies, no personal data tracking
+- Anonymous page view analytics only
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to use the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Next.js](https://nextjs.org) - React framework
+- [Tailwind CSS](https://tailwindcss.com) - Styling
+- [Kite Publisher](https://kite.trade/docs/connect/v3/publisher/) - Direct order placement
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

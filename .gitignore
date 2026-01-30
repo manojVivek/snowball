@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Oatmeal template source
+/template
+*.zip
+
+# Claude Code
+.claude
