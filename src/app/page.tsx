@@ -1,5 +1,11 @@
 'use client'
 
+declare global {
+  interface Window {
+    umami?: { track: (event: string) => void }
+  }
+}
+
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { clsx } from 'clsx/lite'
@@ -246,6 +252,7 @@ export default function Home() {
       setMissingPrices(missing)
 
       setStep('results')
+      window.umami?.track('report-processed')
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred')
       setStep('upload')
@@ -448,7 +455,7 @@ export default function Home() {
 
                 {/* File Dropzone */}
                 <div
-                  {...getRootProps()}
+                  {...getRootProps({ onClick: () => window.umami?.track('file-upload-clicked') })}
                   className={clsx(
                     'w-full cursor-pointer rounded-xl border-2 border-dashed p-8 text-center transition-colors',
                     isDragActive
@@ -657,7 +664,7 @@ export default function Home() {
                   <SoftButton onClick={copyRecommendations} disabled={selectedSymbols.size === 0}>
                     {copied ? 'Copied!' : 'Copy'}
                   </SoftButton>
-                  <Button onClick={() => setExportDrawerOpen(true)} disabled={selectedSymbols.size === 0}>
+                  <Button onClick={() => { setExportDrawerOpen(true); window.umami?.track('export-clicked') }} disabled={selectedSymbols.size === 0}>
                     Export
                   </Button>
                 </div>
